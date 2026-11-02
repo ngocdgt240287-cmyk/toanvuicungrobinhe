@@ -1,0 +1,70 @@
+HUONG DAN NANG CAP ROBI AI + NUT DOC TIENG VIET
+
+BAN NAY THEM GI?
+- Them nut "Nghe Robi doc" va "Dung doc" ngay duoi cau tra loi AI.
+- Dung SpeechSynthesis co san cua trinh duyet, khong can mua dich vu doc van ban.
+- Dat ngon ngu doc la vi-VN, toc do cham hon va cao do nhe de de nghe.
+- Giu nguyen cac phan bai hoc, luyen tap, hinh hoc va giao dien hien co.
+- Khong the dam bao moi may deu co giong nu mien Nam. Danh sach giong doc phu thuoc Windows/macOS/Android/iOS va trinh duyet.
+
+QUAN TRONG VE CHI PHI
+1. Nut doc giong bang trinh duyet khong can API doc giong va khong phat sinh phi dich vu.
+2. Phan hoi AI linh hoat trong ban nay van dung API OpenAI thong qua app/api/tutor/route.ts.
+   API nay can OPENAI_API_KEY. Khong duoc mac dinh rang no mien phi; chi phi tuy tai khoan, model va chinh sach gia hien hanh.
+3. Neu muc tieu la tuyet doi khong phat sinh phi, KHONG nhap khoa API co tinh phi va KHONG bat billing. Khi khong co khoa, chat AI se bao chua duoc cau hinh. Nut doc van hoat dong voi noi dung da co tren man hinh.
+4. Khong dua OPENAI_API_KEY vao file app/page.tsx, khong commit file .env.local len GitHub.
+
+A. CHAY THU TREN MAY TINH
+1. Tai va giai nen ZIP nay vao Downloads.
+2. Mo VS Code > File > Open Folder.
+3. Chon thu muc vua giai nen, la thu muc co package.json va app.
+4. Chon Terminal > New Terminal.
+5. Kiem tra dung thu muc:
+   dir package.json
+6. Cai thu vien:
+   npm install
+7. Kiem tra build:
+   npm run build
+8. Neu build thanh cong, chay:
+   npm run dev
+9. Mo Chrome hoac Edge va vao:
+   http://localhost:3000
+10. Keo xuong "Hoi Robi", gui mot cau hoi (vi du: "Vi sao chu vi hinh chu nhat bang tong chieu dai va chieu rong nhan 2?").
+11. Khi Robi tra loi, bam "Nghe Robi doc". Bam "Dung doc" de dung lai.
+
+B. NEU KHONG NGHE THAY TIENG VIET
+- Thu Chrome hoac Microsoft Edge moi nhat.
+- Kiem tra am luong may va tab trinh duyet.
+- Tren Windows: Settings > Time & language > Speech (hoac Speech settings), xem co goi giong tieng Viet duoc cai dat hay khong. Ten muc co the khac nhau theo phien ban Windows.
+- Trinh duyet chi co the dung cac giong ma he dieu hanh cung cap. Code dat lang vi-VN va uu tien giong tieng Viet, nhung khong the ep buoc may phai co giong nu mien Nam.
+- Tren dien thoai, kiem tra cai dat Text-to-Speech / Van ban thanh giong noi va cai dat giong tieng Viet neu co.
+
+C. DE CAP NHAT WEBSITE TREN VERCEL QUA GITHUB
+Khong ghi de thu muc Git cu bang ca ZIP. Hay sao chep cac file thay doi vao thu muc repository ma ban dang dung.
+Neu thu muc Git cua ban la ~/Downloads/Toan-Vui-Robi-publish:
+1. Giai nen ZIP.
+2. Copy app/page.tsx va app/globals.css tu thu muc giai nen sang Toan-Vui-Robi-publish/app/, cho phep ghi de.
+3. Mo Git Bash:
+   cd ~/Downloads/Toan-Vui-Robi-publish
+4. Kiem tra:
+   git status
+5. Cai thu vien va build trong thu muc nay:
+   npm install
+   npm run build
+6. Neu build thanh cong:
+   git add app/page.tsx app/globals.css
+   git commit -m "Them nut doc giong cho Robi"
+   git push origin main
+7. Mo Vercel > project > Deployments, cho ban moi nhat hien Ready.
+8. Mo website va thu hoi Robi.
+
+D. CAU HINH AI HIEN CO
+Ban nay tiep tuc dung backend OpenAI da co san:
+- Local: tao file .env.local tu .env.example va tu cau hinh khoa rieng cua ban.
+- Vercel: Project > Settings > Environment Variables, them OPENAI_API_KEY va (neu can) OPENAI_MODEL; sau do redeploy.
+- Khong chia se khoa API va khong dua vao GitHub.
+- Neu khong muon bat ky nguy co chi phi nao, khong cau hinh API co tinh phi. Nut doc mien phi van doc duoc cac cau tra loi da hien thi, nhung AI khong the tao cau tra loi moi khi backend chua co nha cung cap AI.
+
+NEU GAP LOI
+- Gui lai nguyen van loi trong Terminal.
+- Khong gui khoa API, mat khau hoac noi dung file .env.local.

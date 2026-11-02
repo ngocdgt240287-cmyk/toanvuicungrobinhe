@@ -1,0 +1,21 @@
+BAT DAU CHAY TOAN VUI - ROBI
+
+1) Giai nen ZIP.
+2) Mo VS Code.
+3) Chon File > Open Folder...
+4) Chon dung thu muc Toan_Vui_Robi_Hoan_Chinh (thu muc co package.json, app, lib).
+5) Chon Terminal > New Terminal.
+6) Nhap: dir package.json
+   Neu thay package.json thi dung thu muc.
+7) Nhap: npm install
+   Cho cai dat xong.
+8) Nhap: npm run dev
+9) Mo trinh duyet va vao: http://localhost:3000
+
+Lan sau chi can mo lai dung thu muc va chay: npm run dev
+Dung web: quay lai Terminal, nhan Ctrl + C.
+
+Neu dir package.json bao khong tim thay, ban dang mo sai thu muc.
+Khong chay npm install o thu muc cha. Hay mo thu muc con truc tiep chua package.json.
+
+Can Node.js 20.9 tro len. AI Robi can khoa API rieng trong .env.local; cac chuc nang hoc va mo phong co the dung khong can khoa API.
